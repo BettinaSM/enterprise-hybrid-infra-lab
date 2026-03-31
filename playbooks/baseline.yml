@@ -3,4 +3,4 @@
   become: true
 
   roles:
-    - common
+    - { role: common, tags: ["baseline"] }
