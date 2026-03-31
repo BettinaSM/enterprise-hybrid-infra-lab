@@ -7,3 +7,4 @@ common_packages:
 
 default_user: opsuser
 ssh_service: sshd
+output_base_dir: "{{ playbook_dir }}/../output"
