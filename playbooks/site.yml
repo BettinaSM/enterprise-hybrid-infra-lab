@@ -4,22 +4,17 @@
 
   vars:
     run_id: "{{ lookup('pipe', 'date +%Y-%m-%d_%H-%M') }}"
-  
+
+  pre_tasks:
+    - name: Create run directory
+      file:
+        path: "{{ output_base_dir }}/runs/{{ run_id }}"
+        state: directory
+      delegate_to: localhost
+      run_once: true
+
   roles:
     - { role: common, tags: ["baseline"] }
     - { role: users, tags: ["users"] }
     - { role: security, tags: ["security"] }
     - { role: monitoring, tags: ["monitoring"] }
-
-  tasks:
-    - name: Save execution log
-      copy:
-        content: "Execution completed on {{ inventory_hostname }} at {{ ansible_date_time.iso8601 }}"
-        dest: "../output/run_{{ inventory_hostname }}.log"
-
-    - name: Create run directory
-      file:
-        path: "../output/runs/{{ run_id }}"
-        state: directory
-      delegate_to: localhost
-      run_once: true    
