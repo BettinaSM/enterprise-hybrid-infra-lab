@@ -1,10 +1,10 @@
-# 🏗️ Enterprise Hybrid Infrastructure Lab
+#  Enterprise Hybrid Infrastructure Lab
 
 Enterprise-grade infrastructure automation framework simulating hybrid environments (Linux / Unix / AIX) using Ansible.
 
 ---
 
-## 🧠 Architecture Overview
+##  Architecture Overview
 
 This project is designed following real-world infrastructure engineering practices:
 
@@ -17,7 +17,7 @@ This project is designed following real-world infrastructure engineering practic
 
 ---
 
-## ⚙️ Key Features
+##  Key Features
 
 - Infrastructure as Code (IaC)
 - Multi-environment support
@@ -29,7 +29,7 @@ This project is designed following real-world infrastructure engineering practic
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 inventories/
 dev/
 prod/
@@ -59,7 +59,7 @@ runbook.md
 
 ---
 
-## ▶️ Execution
+##  Execution
 
 ### Full deployment
 ansible-playbook playbooks/site.yml
@@ -104,7 +104,7 @@ output/runs/2026-03-31_10-30/server1.log
 
 ---
 
-## 🔍 Observability & Analysis
+##  Observability & Analysis
 
 - Logs are generated per host
 - Historical runs are preserved
@@ -116,7 +116,7 @@ output/runs/2026-03-31_10-30/server1.log
 
 ---
 
-## 🧩 Playbook Strategy
+##  Playbook Strategy
 
 | Playbook | Purpose |
 |--------|--------|
@@ -127,7 +127,7 @@ output/runs/2026-03-31_10-30/server1.log
 
 ---
 
-## 🎯 Use Cases
+##  Use Cases
 
 - Infrastructure provisioning
 - System baseline enforcement
@@ -138,7 +138,7 @@ output/runs/2026-03-31_10-30/server1.log
 
 ---
 
-## 🚀 Roadmap
+##  Roadmap
 
 - JSON output for SIEM integration
 - CI/CD pipeline (GitHub Actions)
@@ -148,7 +148,7 @@ output/runs/2026-03-31_10-30/server1.log
 
 ---
 
-## 👩‍💻 Author
+##  Author
 
 Bettina S. M.  
 Infrastructure | Linux | DevOps | Cloud | Security
