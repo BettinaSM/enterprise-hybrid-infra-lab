@@ -1,10 +1,13 @@
 # Runbook
 
-## Run baseline
-ansible-playbook playbooks/baseline.yml
-
 ## Run full deployment
 ansible-playbook playbooks/site.yml
 
-## Run hardening
+## Run baseline only
+ansible-playbook playbooks/baseline.yml
+
+## Run security
 ansible-playbook playbooks/hardening.yml
+
+## Run specific role
+ansible-playbook playbooks/site.yml --tags security
