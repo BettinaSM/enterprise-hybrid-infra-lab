@@ -3,6 +3,6 @@
   become: true
 
   roles:
-    - common
-    - users
-    - security
+   - { role: common, tags: ["baseline"] }
+   - { role: users, tags: ["users"] }
+   - { role: security, tags: ["security"] }
