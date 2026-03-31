@@ -1,1 +1,16 @@
+- name: Update packages
+  apt:
+    update_cache: yes
 
+- name: Install basic packages
+  apt:
+    name:
+      - vim
+      - curl
+      - htop
+    state: present
+
+- name: Create devops user
+  user:
+    name: devops
+    shell: /bin/bash
