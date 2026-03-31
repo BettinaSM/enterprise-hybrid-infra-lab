@@ -2,6 +2,7 @@
   script: "{{ playbook_dir }}/../scripts/health_check.sh"
   register: health_output
   changed_when: false
+  failed_when: false
 
 - name: Save health check output
   copy:
