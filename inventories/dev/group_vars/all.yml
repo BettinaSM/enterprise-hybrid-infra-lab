@@ -1,0 +1,7 @@
+common_packages:
+  - vim
+  - curl
+  - htop
+
+default_user: devops
+ssh_service: ssh
