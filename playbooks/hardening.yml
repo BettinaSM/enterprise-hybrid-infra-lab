@@ -2,5 +2,15 @@
   hosts: all
   become: true
 
+  vars:
+    run_id: "{{ lookup('pipe', 'date +%Y-%m-%d_%H-%M') }}"
+    output_base_dir: "{{ playbook_dir }}/../output"
+
   roles:
     - { role: security, tags: ["security"] }
+
+  post_tasks:
+    - name: Log hardening execution
+      copy:
+        content: "Hardening applied on {{ inventory_hostname }} at {{ ansible_date_time.iso8601 }}"
+        dest: "{{ output_base_dir }}/runs/{{ run_id }}/hardening_{{ inventory_hostname }}.log"
