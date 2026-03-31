@@ -1,10 +1,8 @@
 # Architecture
 
-This project simulates a hybrid infrastructure environment:
+Hybrid infrastructure simulation:
 
 - Linux nodes
 - AIX-like systems
 - Automation via Ansible
-- Environment-based configuration
-
-Supports dev and production separation.
+- Environment separation (dev/prod)
