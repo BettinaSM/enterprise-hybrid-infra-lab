@@ -2,23 +2,37 @@
 
 Enterprise-grade infrastructure automation project simulating hybrid environments (Linux/Unix/AIX) with Ansible.
 
-## Features
+---
 
-- Multi-environment support (dev/prod)
+## 🧠 Design Principles
+
+- Environment segregation (dev/prod)
 - Role-based automation
-- OS abstraction
-- Infrastructure as Code approach
+- OS abstraction (Linux/AIX)
+- Idempotent execution
+- Modular architecture
 
-## Execution
+---
+
+## ⚙️ Features
+
+- Multi-environment support
+- Infrastructure as Code
+- Reusable roles
+- Execution tagging
+- Audit logging
+
+---
+
+## ▶️ Execution
 
 ansible-playbook playbooks/site.yml
 
-## 🧠 Enterprise Design Principles
+---
 
-This project follows real-world infrastructure standards:
+## 🎯 Use Cases
 
-- Environment segregation (dev/prod)
-- Role-based automation design
-- OS abstraction (Linux/AIX compatibility)
-- Idempotent configuration management
-- Modular and reusable components
+- Infrastructure provisioning
+- System baseline enforcement
+- Security hardening
+- Automation standardization
