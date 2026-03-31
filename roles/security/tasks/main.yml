@@ -1,4 +1,9 @@
-- name: Ensure SSH service is running
+- name: Ensure SSH is running
   service:
     name: "{{ ssh_service }}"
     state: started
+
+- name: Debug mode info
+  debug:
+    msg: "Running in {{ env }} environment"
+  when: debug_mode
