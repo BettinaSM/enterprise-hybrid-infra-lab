@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "RUN_ID=$(date '+%Y-%m-%d_%H-%M')"
+
 echo "===== HEALTH CHECK ====="
 
 HOST=$(hostname)
