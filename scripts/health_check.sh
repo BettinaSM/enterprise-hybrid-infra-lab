@@ -1,1 +1,7 @@
-scripts/health_check.sh
+#!/bin/bash
+
+echo "===== HEALTH CHECK ====="
+hostname
+uptime
+df -h
+free -m
