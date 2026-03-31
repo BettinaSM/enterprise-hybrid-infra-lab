@@ -1,0 +1,4 @@
+- name: Create default user
+  user:
+    name: "{{ default_user }}"
+    shell: /bin/bash
