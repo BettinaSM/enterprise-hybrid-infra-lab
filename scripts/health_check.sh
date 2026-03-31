@@ -1,0 +1,1 @@
+scripts/health_check.sh
