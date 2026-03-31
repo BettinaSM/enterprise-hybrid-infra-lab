@@ -1,5 +1,6 @@
----
 common_packages:
   - vim
   - curl
   - htop
+
+devops_user: devops
