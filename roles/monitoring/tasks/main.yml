@@ -12,3 +12,8 @@
   debug:
     var: health_output.stdout_lines
   when: debug_mode
+
+- name: Save health check output
+  copy:
+    content: "{{ health_output.stdout }}"
+    dest: "../output/runs/{{ run_id }}/{{ inventory_hostname }}.log"
