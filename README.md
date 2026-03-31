@@ -36,3 +36,19 @@ ansible-playbook playbooks/site.yml
 - System baseline enforcement
 - Security hardening
 - Automation standardization
+
+## 📊 Execution & Observability
+
+This project includes execution tracking and log analysis:
+
+- Each run generates a timestamped directory
+- Logs are stored per host
+- Historical runs can be compared for drift detection
+
+### Example:
+
+output/runs/2026-03-31_10-30/server1.log
+
+### Compare runs:
+
+./scripts/compare_runs.sh <current_run> <previous_run>
