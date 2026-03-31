@@ -2,48 +2,50 @@
 
 echo "===== HEALTH CHECK ====="
 
-echo "Hostname:"
-hostname
-
-echo "Date:"
-date
-
+HOST=$(hostname)
+DATE=$(date '+%Y-%m-%d %H:%M:%S')
 OS=$(uname)
 
-echo "OS Detected: $OS"
+echo "SERVER=$HOST"
+echo "DATE=$DATE"
+echo "OS=$OS"
 
 echo "----------------------"
 
 # DISK
-echo "[DISK USAGE]"
-if [ "$OS" = "Linux" ]; then
-    df -h
+echo "[DISK]"
+if command -v df >/dev/null 2>&1; then
+    if [ "$OS" = "Linux" ]; then
+        df -h
+    else
+        df -g
+    fi
 else
-    df -g
+    echo "df command not available"
 fi
 
 echo "----------------------"
 
 # MEMORY
-echo "[MEMORY USAGE]"
-if [ "$OS" = "Linux" ]; then
+echo "[MEMORY]"
+if [ "$OS" = "Linux" ] && command -v free >/dev/null 2>&1; then
     free -m
 elif [ "$OS" = "AIX" ]; then
     vmstat -s
 else
-    echo "Memory command not standardized for this OS"
+    echo "Memory info not available"
 fi
 
 echo "----------------------"
 
 # CPU
-echo "[CPU INFO]"
-if [ "$OS" = "Linux" ]; then
+echo "[CPU]"
+if [ "$OS" = "Linux" ] && command -v lscpu >/dev/null 2>&1; then
     lscpu | grep "Model name"
 elif [ "$OS" = "AIX" ]; then
-    lsattr -El proc0 | grep frequency
+    lsattr -El proc0 2>/dev/null
 else
-    echo "CPU info command not standardized"
+    echo "CPU info not available"
 fi
 
 echo "----------------------"
