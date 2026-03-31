@@ -1,0 +1,6 @@
+- name: Monitoring execution
+  hosts: all
+  become: true
+
+  roles:
+    - { role: monitoring, tags: ["monitoring"] }
