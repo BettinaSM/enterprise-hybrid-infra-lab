@@ -2,6 +2,9 @@
   hosts: all
   become: true
 
+  vars:
+    run_id: "{{ lookup('pipe', 'date +%Y-%m-%d_%H-%M') }}"
+  
   roles:
     - { role: common, tags: ["baseline"] }
     - { role: users, tags: ["users"] }
@@ -13,3 +16,10 @@
       copy:
         content: "Execution completed on {{ inventory_hostname }} at {{ ansible_date_time.iso8601 }}"
         dest: "../output/run_{{ inventory_hostname }}.log"
+
+    - name: Create run directory
+      file:
+        path: "../output/runs/{{ run_id }}"
+        state: directory
+      delegate_to: localhost
+      run_once: true    
