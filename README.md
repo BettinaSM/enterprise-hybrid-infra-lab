@@ -91,7 +91,7 @@ ansible-playbook -i inventories/prod/hosts.ini playbooks/site.yml
 
 ---
 
-## 📊 Execution Model
+##  Execution Model
 
 Each execution generates a unique run directory:
 
