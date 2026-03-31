@@ -1,7 +1,0 @@
-common_packages:
-  - vim
-  - curl
-  - htop
-
-default_user: devops
-output_base_dir: "./output"
