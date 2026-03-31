@@ -4,6 +4,7 @@
 
   vars:
     run_id: "{{ lookup('pipe', 'date +%Y-%m-%d_%H-%M') }}"
+    output_base_dir: "{{ playbook_dir }}/../output"
 
   pre_tasks:
     - name: Create run directory
