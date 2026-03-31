@@ -1,3 +1,6 @@
+env: prod
+debug_mode: false
+
 common_packages:
   - vim
   - curl
