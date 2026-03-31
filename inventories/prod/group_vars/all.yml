@@ -1,0 +1,6 @@
+common_packages:
+  - vim
+  - curl
+
+default_user: opsuser
+ssh_service: sshd
