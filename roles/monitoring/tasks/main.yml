@@ -1,19 +1,14 @@
 - name: Run health check script
-  script: ../../scripts/health_check.sh
+  script: "{{ playbook_dir }}/../scripts/health_check.sh"
   register: health_output
   changed_when: false
 
 - name: Save health check output
   copy:
     content: "{{ health_output.stdout }}"
-    dest: "../output/health_{{ inventory_hostname }}.log"
+    dest: "{{ output_base_dir }}/runs/{{ run_id }}/{{ inventory_hostname }}.log"
 
 - name: Debug output (optional)
   debug:
     var: health_output.stdout_lines
   when: debug_mode
-
-- name: Save health check output
-  copy:
-    content: "{{ health_output.stdout }}"
-    dest: "../output/runs/{{ run_id }}/{{ inventory_hostname }}.log"
