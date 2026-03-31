@@ -4,3 +4,4 @@ common_packages:
   - htop
 
 default_user: devops
+output_base_dir: "./output"
