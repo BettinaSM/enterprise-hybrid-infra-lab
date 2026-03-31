@@ -1,13 +1,31 @@
 # Runbook
 
-## Run full deployment
+## Run Full Deployment
+
 ansible-playbook playbooks/site.yml
 
-## Run baseline only
-ansible-playbook playbooks/baseline.yml
+---
 
-## Run security
-ansible-playbook playbooks/hardening.yml
+## Run Specific Role
 
-## Run specific role
-ansible-playbook playbooks/site.yml --tags security
+ansible-playbook playbooks/site.yml --tags monitoring
+
+---
+
+## Run Against Production
+
+ansible-playbook -i inventories/prod/hosts.ini playbooks/site.yml
+
+---
+
+## Output Location
+
+output/runs/<timestamp>/
+
+Each host generates its own log file.
+
+---
+
+## Compare Runs
+
+./scripts/compare_runs.sh <current_run> <previous_run>
