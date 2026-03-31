@@ -1,16 +1,10 @@
-- name: Update packages
+- name: Install packages
   apt:
-    update_cache: yes
-
-- name: Install basic packages
-  apt:
-    name:
-      - vim
-      - curl
-      - htop
+    name: "{{ common_packages }}"
     state: present
+    update_cache: yes
 
 - name: Create devops user
   user:
-    name: devops
+    name: "{{ devops_user }}"
     shell: /bin/bash
