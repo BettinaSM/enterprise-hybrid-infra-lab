@@ -1,16 +1,43 @@
-# Enterprise Hybrid Infrastructure Lab
+# 🏗️ Enterprise Hybrid Infrastructure Lab
 
-Projeto simulando ambiente corporativo com:
+This project simulates a real-world enterprise infrastructure environment combining:
 
-- Linux servers
-- Automação com Ansible
-- Scripts operacionais
-- Ambiente containerizado
+- Linux-based servers
+- Unix/AIX-like systems (simulated)
+- Infrastructure automation using Ansible
+- Containerized lab environment using Docker
+- Operational scripts for system administration
 
-## Como rodar
+---
 
-docker-compose up -d
+## 🎯 Purpose
 
-## Executar Ansible
+The goal of this project is to demonstrate practical skills in:
 
-ansible-playbook -i inventory.ini playbook.yml
+- Infrastructure management
+- Automation and configuration management
+- System administration (Linux/Unix)
+- Hybrid environment design
+- DevOps foundational practices
+
+---
+
+## 🧠 Scenario
+
+A fictional enterprise environment with:
+
+- Web server
+- Application server
+- Bastion-like access model
+- Automated provisioning
+
+---
+
+## ⚙️ Technologies
+
+- Linux (Ubuntu)
+- Ansible
+- Docker
+- Bash scripting
+
+---
