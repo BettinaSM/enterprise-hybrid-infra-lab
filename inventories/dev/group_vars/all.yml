@@ -8,3 +8,4 @@ common_packages:
 
 default_user: devops
 ssh_service: ssh
+output_base_dir: "{{ playbook_dir }}/../output"
